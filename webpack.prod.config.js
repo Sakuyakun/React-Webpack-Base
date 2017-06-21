@@ -8,7 +8,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 // 抽离css样式
 const extractPlugin = new ExtractTextPlugin({
-  filename: '[name]-[chunkhash].css',  //生成文件的文件名
+  filename: '[name].[chunkhash].css',  //生成文件的文件名
   ignoreOrder: true, //禁用顺序检查
   allChunks: true
 })
@@ -31,48 +31,6 @@ module.exports = {
       filename: '[name].[chunkhash].js',
     },
     resolve: { extensions: ['jsx', '.js', '.json', '.scss'] },
-    plugins: [
-      extractPlugin,
-      new Clean(path.resolve(__dirname, './dist')),
-      new HtmlWebpackPlugin({
-        // filename: 'index-[hash].html',
-        template: './src/template/index.html',
-        minify: {
-          // https://github.com/kangax/html-minifier
-          removeComments: true,
-          collapseWhitespace: false,
-          removeAttributeQuotes: true
-        }
-      }),
-      // new webpack.DefinePlugin({
-      //   'process.env': {
-      //     'NODE_ENV': JSON.stringify('production')
-      //   }
-      // }),
-      // new UglifyJSPlugin({
-      //   compress: {
-      //     warnings: false,
-      //     drop_console: true
-      //   },
-      //   beautify: false,
-      //   except: ['$super', '$', 'exports', 'require']
-      // }),
-
-      //TODO: manifest文件提取出错
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: function (module) {
-            return module.context && module.context.indexOf('node_modules') !== -1;
-        }
-      }),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: "manifest",
-        chunks: ["vendor"],
-        minChunks: Infinity
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
-      new DashboardPlugin()
-    ],
     module: {
       rules: [
         {
@@ -122,5 +80,47 @@ module.exports = {
           loader: 'json'
         }
       ]
-    }
+    },
+    plugins: [
+      extractPlugin,
+      new Clean(path.resolve(__dirname, './dist')),
+      new HtmlWebpackPlugin({
+        // filename: 'index-[hash].html',
+        template: './src/template/index.html',
+        minify: {
+          // https://github.com/kangax/html-minifier
+          removeComments: true,
+          collapseWhitespace: false,
+          removeAttributeQuotes: true
+        }
+      }),
+      // new webpack.DefinePlugin({
+      //   'process.env': {
+      //     'NODE_ENV': JSON.stringify('production')
+      //   }
+      // }),
+      // new UglifyJSPlugin({
+      //   compress: {
+      //     warnings: false,
+      //     drop_console: true
+      //   },
+      //   beautify: false,
+      //   except: ['$super', '$', 'exports', 'require']
+      // }),
+
+      //TODO: manifest文件提取出错
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: function (module) {
+            return module.context && module.context.indexOf('node_modules') !== -1;
+        }
+      }),
+      // new webpack.optimize.CommonsChunkPlugin({
+      //   name: "manifest",
+      //   chunks: ["vendor"],
+      //   minChunks: Infinity
+      // }),
+      // new webpack.optimize.ModuleConcatenationPlugin(),
+      new DashboardPlugin()
+    ]
 };

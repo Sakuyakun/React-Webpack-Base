@@ -9,7 +9,7 @@ module.exports = {
       'react-hot-loader/patch',
       'webpack-dev-server/client?' + publicPath,
       'webpack/hot/only-dev-server',
-      './src/index.jsx'
+      './src/index_dev.jsx'
     ],
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -59,7 +59,7 @@ module.exports = {
         // jsx
         {
           test: /\.(js|jsx)$/,
-          include: /node_modules/,
+          include: path.resolve(__dirname, './src'),
           use: {
             loader: 'babel-loader',
             options: {
