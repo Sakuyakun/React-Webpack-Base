@@ -8,7 +8,7 @@ export default class Navigation extends Component {
     return (
       <div className={style.Nav}>
         <Link to='/'>viewIndex</Link>
-        <Link to='/404'>4044</Link>
+        <Link to='/404'>404</Link>
       </div>
     )
   }

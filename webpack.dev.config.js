@@ -18,7 +18,6 @@ module.exports = {
     },
     resolve: { extensions: ['jsx', '.js', '.json', '.scss'] },
     plugins: [
-      // new webpack.optimize.ModuleConcatenationPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
       new webpack.DefinePlugin({
@@ -47,9 +46,10 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 modules: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]',
                 Composing: true,
                 sourceMap: true,
-                importLoaders: 2
+                importLoaders: 1
               }
             },
             'postcss-loader',
