@@ -7,8 +7,8 @@ export default class Navigation extends Component {
   render () {
     return (
       <div className={style.Nav}>
-        <Link to='/'>viewIndex</Link>
-        <Link to='/404'>404</Link>
+        <Link to='/'>开始页</Link>
+        <Link to='/content'>内容页</Link>
       </div>
     )
   }

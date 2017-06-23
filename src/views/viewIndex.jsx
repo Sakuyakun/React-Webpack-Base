@@ -7,12 +7,14 @@ class viewIndex extends Component {
     super(props);
   }
   componentWillMount() {
-    let data = { message: 'message from viewIndexRedux'}
+    let data = { message: `
+      React开发环境搭建练习用，目前还有许多不完善的地方，如果有好的建议规范请在Issues告诉我。
+    `}
     this.props.setSendMessage(data)
   }
   render () {
     return (
-      <div>{`Welcome ! ${this.props.message}`}</div>
+      <div>{`欢迎！${this.props.message}`}</div>
     );
   }
 }

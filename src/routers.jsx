@@ -5,8 +5,10 @@ import CSSModules from 'react-css-modules';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import styles from './style.scss'
 
+// Router
 import Navigation from './views/navigation.jsx'
 import ViewIndex from './views/viewIndex.jsx'
+import Content from './views/content.jsx'
 import NoMatch from './views/404.jsx'
 
 class Routers extends Component {
@@ -14,12 +16,13 @@ class Routers extends Component {
     return (
       <Router>
         <div styleName='view'>
-          <div>
+          <div styleName='toparea'>
             <Navigation />
           </div>
-          <div>
+          <div styleName='bottomarea'>
             <Switch>
               <Route exact path="/" component={ViewIndex} />
+              <Route exact path="/content" component={Content} />
               <Route component={NoMatch} />
             </Switch>
           </div>

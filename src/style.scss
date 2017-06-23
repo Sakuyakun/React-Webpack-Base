@@ -1,10 +1,4 @@
-// style.scss
-// :global{
-//   html, body{
-//     height: 100%;
-//     width: 100%;
-//   }
-// }
+$link_color: #66b3ff;
 
 .view{
   position: absolute;
@@ -12,5 +6,30 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: #eaeaea;
+
+  background-image:
+  linear-gradient(#DEDFE3 2%, #AEB3B9 95%),
+  radial-gradient(33% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: screen;
+
+  display: flex;
+  flex-direction: column;
+
+  a{
+    color: $link_color;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+}
+
+.toparea{
+  height: 100px;
+  line-height: 100px;
+  box-shadow: 0px -2px 6px 3px rgba(0, 0, 0, .4);
+}
+.bottomarea{
+  padding: 30px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
 }
