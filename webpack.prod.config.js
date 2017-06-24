@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.js')
 
 // const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
@@ -17,6 +17,28 @@ const extractPlugin = new ExtractTextPlugin({
   ignoreOrder: true, //禁用顺序检查
   allChunks: true
 })
+const scssRule = {
+  test: /\.scss$/,
+  include: path.resolve(__dirname, './src'),
+  use: extractPlugin.extract({
+    use: [
+      {
+        loader: "css-loader",
+        options: {
+          modules: true,
+          localIdentName: '[name]__[local]--[hash:base64:5]',
+          Composing: true,
+          sourceMap: true,
+          importLoaders: 1
+        },
+      },
+      {loader: "postcss-loader"},
+      {loader: "sass-loader"}
+    ],
+    fallback: 'style-loader'
+  })
+}
+baseConfig.module.rules.push(scssRule)
 
 const prodConfig = {
     entry: {

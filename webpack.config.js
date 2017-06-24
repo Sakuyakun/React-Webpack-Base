@@ -26,26 +26,6 @@ const baseConfig = {
           emitWarning: true,
         },
       },
-      // sass
-      {
-        test: /\.scss$/,
-        include: path.resolve(__dirname, './src'),
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
-              Composing: true,
-              sourceMap: true,
-              importLoaders: 1
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
       // jsx
       {
         test: /\.(js|jsx)$/,
