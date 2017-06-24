@@ -1,4 +1,5 @@
-// 用于异步加载组件
+// 暂未开启按需加载路由功能 此文件保留
+// routerbundle 用于路由异步加载组件
 import React, { Component } from 'react'
 
 export default class Bundle extends Component {

@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const baseConfig = require('./webpack.config.js')
+
 // const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 // const WebpackChunkHash = require("webpack-chunk-hash");
 
@@ -16,7 +18,7 @@ const extractPlugin = new ExtractTextPlugin({
   allChunks: true
 })
 
-module.exports = {
+const prodConfig = {
     entry: {
       app: path.join(__dirname, 'src/index.jsx'),
       vendor: [
@@ -33,59 +35,6 @@ module.exports = {
       path: path.join(__dirname, 'dist'),
       filename: "[name].[chunkhash].js",
       chunkFilename: "[name].[chunkhash].js"
-    },
-    resolve: { extensions: ['jsx', '.js', '.json', '.scss'] },
-    module: {
-      rules: [
-        {
-          loader: 'eslint-loader',
-          test: /\.(js|jsx)$/,
-          enforce: "pre",
-          exclude: /node_modules/,
-          options: {
-            emitWarning: true,
-          },
-        },
-        // sass
-        {
-          test: /\.scss$/,
-          include: [path.resolve(__dirname, './src')],
-          use: extractPlugin.extract({
-            use: [
-              {
-                loader: "css-loader",
-                options: {
-                  modules: true,
-                  localIdentName: '[name]__[local]--[hash:base64:5]',
-                  Composing: true,
-                  sourceMap: true,
-                  importLoaders: 1
-                }
-              },
-              {loader: "sass-loader"}
-            ],
-            fallback: 'style-loader'
-          })
-        },
-        // jsx
-        {
-          test: /\.(js|jsx)$/,
-          loader: 'babel-loader',
-          include: [path.resolve(__dirname, './src')],
-        },
-        {
-          test: /\.(png|jpg|gif|jpeg)$/,
-          loader: 'url-loader?limit=10000&name=assets/[name].[ext]'
-        },
-        {
-          test: /\.svg$/,
-          loader: 'svg-inline-loader'
-        },
-        {
-          test: /\.json?$/,
-          loader: 'json'
-        }
-      ]
     },
     plugins: [
       extractPlugin,
@@ -113,6 +62,8 @@ module.exports = {
         beautify: false,
         except: ['$super', '$', 'exports', 'require']
       }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new DashboardPlugin(),
 
       // new webpack.optimize.CommonsChunkPlugin({
       //   name: ["vendor", "manifest"], // vendor libs + extracted manifest
@@ -125,7 +76,7 @@ module.exports = {
       //   manifestVariable: "webpackManifest",
       //   inlineManifest: true
       // }),
-      // new webpack.optimize.ModuleConcatenationPlugin(),
-      // new DashboardPlugin(),
     ]
 };
+
+module.exports = Object.assign(baseConfig, prodConfig)

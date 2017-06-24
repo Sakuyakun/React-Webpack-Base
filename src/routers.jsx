@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import classNames from 'classnames'
 import CSSModules from 'react-css-modules';
-// 使用BrowserRouter需要nginx做处理
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import styles from './style.scss'
 
+// 使用BrowserRouter需要nginx做处理
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+
+// 按需加载
+// import Bundle from './utils/routerbundle'
+// import ContentContainer from 'bundle-loader?lazy&name=[name]!./views/content.jsx';
+
+// 异步引入
+// const Content = () => {
+//   <Bundle load={ContentContainer}>
+//     { (Content) => <Content /> }
+//   </Bundle>
+// }
+
 // Router
-import Navigation from './views/navigation.jsx'
-import ViewIndex from './views/viewIndex.jsx'
-import Content from './views/content.jsx'
-import NoMatch from './views/404.jsx'
+import Navigation from './views/navigation'
+import ViewIndex from './views/viewIndex'
+import About from './views/about'
+import NoMatch from './views/404'
 
 class Routers extends Component {
+  constructor(props) {
+    super(props);
+  }
   render () {
     return (
       <Router>
@@ -22,7 +36,7 @@ class Routers extends Component {
           <div styleName='bottomarea'>
             <Switch>
               <Route exact path="/" component={ViewIndex} />
-              <Route exact path="/content" component={Content} />
+              <Route path="/content" component={About} />
               <Route component={NoMatch} />
             </Switch>
           </div>

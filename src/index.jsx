@@ -1,14 +1,16 @@
+import { AppContainer as HotReloader } from 'react-hot-loader'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Routers from './routers.jsx'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { viewReducer } from './reducers/index.jsx'
+import { viewReducer } from './reducers/index'
 import normalize from './normalize.scss'
+import style from './style.scss'
 
 // store
 const myMiddleware = store => next => action => {
-  console.log('这是自定义中间件方法')
+  // 自定义中间件
   let result = next(action)
   return result
 }
@@ -17,10 +19,19 @@ const store = createStore(combine, applyMiddleware(myMiddleware))
 
 // render
 const rootEle = document.getElementById('root');
+const render = () => {
+  ReactDOM.render(
+    <HotReloader>
+      <Provider store={store}>
+          <Routers />
+      </Provider>
+    </HotReloader>,
+    rootEle
+  );
+};
+render()
 
-ReactDOM.render(
-  <Provider store={store}>
-      <Routers />
-  </Provider>,
-  rootEle
-);
+// hotReplace
+if (module.hot) {
+  module.hot.accept('./routers.jsx', render);
+}

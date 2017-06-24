@@ -2,37 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { setSendMessageActions } from '../actions/viewIndex.jsx'
 
-class viewIndex extends Component {
+import CSSModules from 'react-css-modules';
+import styles from '../assets/css/viewindex.scss'
+
+class ViewIndex extends Component {
   constructor (props) {
     super(props);
   }
-  componentWillMount() {
-    let data = { message: `
-      React开发环境搭建练习用，目前还有许多不完善的地方，如果有好的建议规范请在Issues告诉我。
-    `}
-    this.props.setSendMessage(data)
-  }
   render () {
     return (
-      <div>{`欢迎！${this.props.message}`}</div>
-    );
+      <div>
+        <span styleName='title'>
+          React <br/>
+          and React-Redux <br/>
+          and React-Router4 <br/>
+          with webpack3 <br/>
+          ES6 Enviorment SetUp
+        </span>
+      </div>
+    )
+  }
+  componentDidMount() {
+    console.log(this.props.message)
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    message: state.viewReducer.message
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setSendMessage: (data) => {
-      dispatch(setSendMessageActions(data))
-    }
-  }
-}
-
-viewIndex = connect(mapStateToProps, mapDispatchToProps)(viewIndex)
-
-export default viewIndex;
+export default CSSModules(ViewIndex, styles)
