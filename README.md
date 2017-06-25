@@ -1,9 +1,7 @@
 # Boilerplate
-![yorha](https://www.tuchuang001.com/images/2017/06/26/2017-06-2612.19.33.png)
+![yorha](http://opjfgwa08.bkt.clouddn.com/17-6-26/38326017.jpg)
 
-React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。
-
-目前依旧存在许多不完善的地方，如果有错误或者好的建议请联系我。
+React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。目前依旧存在许多不完善的地方，如果有错误或者好的建议请联系我。计划日后会用这个环境来写一套自己的组件库。
 
 # Feature
 - 主要技术栈 React15 React-Redux5 React-Router15 SASS ES6/7
@@ -14,6 +12,7 @@ React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/Re
 - 代码压缩，文件添加MD5缓存处理
 
 # Todo
+- [ ] 搭建笔记文档
 - [ ] React Router 按需加载
 - [x] 解决 ESlint 检测问题
 - [ ] 交互动画处理
