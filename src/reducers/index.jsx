@@ -1,16 +1,18 @@
-import { SEND_MESSAGE } from '../actions/viewIndex.jsx'
+import { SEND_MESSAGE } from "../actions/viewIndex.jsx";
 
-export function viewReducer (state, action) {
+export function viewReducer(state, action) {
   if (!state) {
     state = {
       message: `
-        React开发环境搭建练习用，目前还有许多不完善的地方，
-        如果有好的建议规范请在Issues告诉我。
+        REACT SPA开发环境搭建练习用，
+        目前依旧存在许多不完善的地方。
+        如果有好的搭建建议请在Issues告诉我。
         github.com/Sakuyakun/React-Webpack-Base/issues
+        Sakuya 2017/06/15
       `
-    }
+    };
   }
-  switch(action.type) {
+  switch (action.type) {
     case SEND_MESSAGE:
       return {
         ...state,
@@ -19,4 +21,4 @@ export function viewReducer (state, action) {
     default:
       return state;
   }
-};
+}
