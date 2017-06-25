@@ -9,7 +9,7 @@
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --colors",
     "build": "export NODE_ENV=production && webpack-dashboard -- webpack -p --config webpack.prod.config.js --progress --colors",
-    "lint": "eslint ./src/** --color",
+    "lint": "eslint ./src/**/*.jsx --color",
     "precommit": "lint-staged"
   },
   "lint-staged": {
