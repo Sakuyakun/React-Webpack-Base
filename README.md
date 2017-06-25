@@ -1,7 +1,9 @@
 # Boilerplate
-![yorha](http://opjfgwa08.bkt.clouddn.com/17-6-26/38326017.jpg)
+![yorha](http://i1.buimg.com/1949/27e7fae307f7a4aa.png)
 
-React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。目前依旧存在许多不完善的地方，如果有错误或者好的建议请联系我。计划日后会用这个环境来写一套自己的组件库。
+React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。
+
+目前依旧存在许多不完善的地方，如果有错误或者好的建议请联系我。计划日后会用这个环境来写一套自己的组件库。
 
 # Feature
 - 主要技术栈 React15 React-Redux5 React-Router15 SASS ES6/7
