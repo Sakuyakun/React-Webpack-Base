@@ -15,7 +15,7 @@
         "commonjs": true
     },
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": "warn",
         "no-cond-assign": "error",
         "no-constant-condition": "error",
         "no-dupe-args": "error",

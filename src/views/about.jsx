@@ -22,9 +22,6 @@ class About extends Component {
       </div>
     );
   }
-  componentDidMount() {
-    console.log(this.props.message);
-  }
 }
 
 const mapStateToProps = state => {
@@ -40,5 +37,6 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
+
 const ComponentWithCSS = CSSModules(About, Styles);
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentWithCSS);

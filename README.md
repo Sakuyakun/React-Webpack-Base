@@ -14,9 +14,9 @@ React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/Re
 - 代码压缩，文件添加MD5缓存处理
 
 # Todo
+- [ ] 处理prod配置文件vender提取
 - [ ] 搭建笔记文档
 - [ ] React Router 按需加载
-- [x] 解决 ESlint 检测问题
 - [ ] 交互动画处理
 - [ ] Mock 与数据请求处理
 

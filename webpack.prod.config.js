@@ -12,7 +12,7 @@ const baseConfig = require("./webpack.config.js");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const Clean = require("clean-webpack-plugin");
 
-// 提取CSS
+// SCSS Loader
 const extractPlugin = new ExtractTextPlugin({
   filename: "[name].[chunkhash].css",
   ignoreOrder: true, //禁用顺序检查
@@ -20,7 +20,7 @@ const extractPlugin = new ExtractTextPlugin({
 });
 const scssRule = {
   test: /\.scss$/,
-  include: path.resolve(__dirname, "./src"),
+  include: path.resolve(__dirname, "src"),
   use: extractPlugin.extract({
     use: [
       {
@@ -43,7 +43,7 @@ baseConfig.module.rules.push(scssRule);
 
 const prodConfig = {
   entry: {
-    app: path.join(__dirname, "src/index.jsx"),
+    app: path.resolve(__dirname, "src/entry"),
     vendor: [
       "react",
       "react-dom",
@@ -55,13 +55,13 @@ const prodConfig = {
     ]
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].[chunkhash].js",
     chunkFilename: "[name].[chunkhash].js"
   },
   plugins: [
     extractPlugin,
-    new Clean(path.join(__dirname, "dist")),
+    new Clean(path.resolve(__dirname, "dist")),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
@@ -88,17 +88,13 @@ const prodConfig = {
         warnings: false,
         drop_console: true
       },
-      beautify: false,
-      except: ["$super", "$", "exports", "require"]
+      beautify: false
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new OfflinePlugin(),
-    new DashboardPlugin()
-
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ["vendor", "manifest"], // vendor libs + extracted manifest
-    //   minChunks: Infinity,
-    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ["vendor"], // vendor libs + extracted manifest
+    }),
+    // new OfflinePlugin(),
     // new webpack.HashedModuleIdsPlugin(),
     // new WebpackChunkHash(),
     // new ChunkManifestPlugin({
@@ -106,6 +102,7 @@ const prodConfig = {
     //   manifestVariable: "webpackManifest",
     //   inlineManifest: true
     // }),
+    new DashboardPlugin(),
   ]
 };
 

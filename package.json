@@ -4,7 +4,10 @@
   "description": "react webpack boilerplate",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sakuyakun/React-Webpack-Boilerplate"
+  },
   "license": "MIT",
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --colors",
@@ -18,13 +21,9 @@
     ]
   },
   "dependencies": {
-    "autoprefixer": "^7.1.1",
-    "babel-preset-env": "^1.5.2",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
-    "file-loader": "^0.11.2",
     "moment": "^2.18.1",
-    "offline-plugin": "^4.8.1",
     "react": "^15.6.1",
     "react-css-modules": "^4.3.0",
     "react-dom": "^15.6.1",
@@ -33,6 +32,7 @@
     "redux": "^3.7.0"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
@@ -51,9 +51,11 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.5.3",
+    "offline-plugin": "^4.8.1",
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.4.4",
@@ -75,10 +77,6 @@
     "kit",
     "boilerplate",
     "hot",
-    "live",
-    "reload",
-    "edit",
-    "editing",
     "hmr",
     "webpack",
     "webpack 2",

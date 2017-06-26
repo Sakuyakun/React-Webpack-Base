@@ -6,13 +6,13 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { viewReducer } from "./reducers/index";
 import normalize from "./normalize.scss";
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import style from "./style.scss";
+// import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
-// PWA
-if (process.env.NODE_ENV === "production") {
-  OfflinePluginRuntime.install();
-}
+// offline plugin
+// if (process.env.NODE_ENV === "production") {
+//   OfflinePluginRuntime.install();
+// }
 
 // 自定义中间件
 const myMiddleware = store => next => action => {

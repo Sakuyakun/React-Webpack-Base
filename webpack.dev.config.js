@@ -13,7 +13,7 @@ const extractPlugin = new ExtractTextPlugin({
 });
 const scssRule = {
   test: /\.scss$/,
-  include: path.resolve(__dirname, "./src"),
+  include: path.resolve(__dirname, "src"),
   use: [
     "style-loader",
     {
@@ -26,8 +26,14 @@ const scssRule = {
         importLoaders: 1
       }
     },
-    "postcss-loader",
-    "sass-loader"
+    {
+      loader:"postcss-loader",
+      options: { sourceMap: true }
+    },
+    {
+      loader:"sass-loader",
+      options: { sourceMap: true }
+    }
   ]
 };
 baseConfig.module.rules.push(scssRule);
@@ -38,7 +44,7 @@ const devConfig = {
     "react-hot-loader/patch",
     "webpack-dev-server/client?" + publicPath,
     "webpack/hot/only-dev-server",
-    "./src/index"
+    "./src/entry"
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
