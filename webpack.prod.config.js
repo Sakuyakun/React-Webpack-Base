@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OfflinePlugin = require("offline-plugin")
 const baseConfig = require("./webpack.config.js");
 
 // const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
@@ -67,13 +68,18 @@ const prodConfig = {
       }
     }),
     new HtmlWebpackPlugin({
-      // filename: 'index-[hash].html',
       template: "./src/template/index.html",
       minify: {
-        // https://github.com/kangax/html-minifier
         removeComments: true,
-        collapseWhitespace: false,
-        removeAttributeQuotes: true
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
       },
       favicon: path.resolve(__dirname, 'src/assets/images/favicon.ico')
     }),
@@ -86,6 +92,7 @@ const prodConfig = {
       except: ["$super", "$", "exports", "require"]
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new OfflinePlugin(),
     new DashboardPlugin()
 
     // new webpack.optimize.CommonsChunkPlugin({

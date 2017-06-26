@@ -20,9 +20,6 @@ class ViewIndex extends Component {
       </div>
     );
   }
-  componentDidMount() {
-    console.log(this.props.message);
-  }
 }
 
 export default CSSModules(ViewIndex, styles);

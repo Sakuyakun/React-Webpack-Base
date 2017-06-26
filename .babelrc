@@ -1,15 +1,15 @@
 {
-  "presets": ["stage-0", "react"],
-  "plugins": ["transform-runtime", "transform-class-properties", "transform-decorators-legacy"],
+  "presets": ["stage-0", ["es2015", { "modules": false }], "react"],
+  "plugins": [
+    ["transform-runtime", {"polyfill": false}],
+    "transform-class-properties",
+    "transform-decorators-legacy"
+  ],
   "env": {
     "development": {
-      "presets": [["es2015", { "modules": false }]],
       "plugins": [
         "react-hot-loader/babel",
       ]
-    },
-    "production": {
-      "presets": ["es2015"],
     }
   }
 }

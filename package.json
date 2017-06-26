@@ -1,7 +1,7 @@
 {
-  "name": "yorha",
+  "name": "Yorha",
   "author": "Sakuya",
-  "description": "ui components with react",
+  "description": "react webpack boilerplate",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "",
@@ -19,10 +19,12 @@
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "file-loader": "^0.11.2",
     "moment": "^2.18.1",
+    "offline-plugin": "^4.8.1",
     "react": "^15.6.1",
     "react-css-modules": "^4.3.0",
     "react-dom": "^15.6.1",
