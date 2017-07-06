@@ -3,40 +3,7 @@ const webpack = require("webpack");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const publicPath = "http://localhost:3004/";
-const baseConfig = require("./webpack.config.js");
-
-// 提取CSS
-const extractPlugin = new ExtractTextPlugin({
-  filename: "[name].[chunkhash].css",
-  ignoreOrder: true, //禁用顺序检查
-  allChunks: true
-});
-const scssRule = {
-  test: /\.scss$/,
-  include: path.resolve(__dirname, "src"),
-  use: [
-    "style-loader",
-    {
-      loader: "css-loader",
-      options: {
-        modules: true,
-        localIdentName: "[name]__[local]--[hash:base64:5]",
-        Composing: true,
-        sourceMap: true,
-        importLoaders: 1
-      }
-    },
-    {
-      loader:"postcss-loader",
-      options: { sourceMap: true }
-    },
-    {
-      loader:"sass-loader",
-      options: { sourceMap: true }
-    }
-  ]
-};
-baseConfig.module.rules.push(scssRule);
+const {baseConfig} = require("./webpack.config.js");
 
 const devConfig = {
   devtool: "inline-source-map",
@@ -54,9 +21,6 @@ const devConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": '"production"'
-    }),
     new DashboardPlugin()
   ],
   devServer: {
