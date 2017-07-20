@@ -4,9 +4,8 @@ import ReactDOM from "react-dom";
 import Routers from "./routers.jsx";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { viewReducer } from "./reducers/index";
+import { IndexReducers } from "./reducers/index";
 import normalize from "./normalize.scss";
-import style from "./style.scss";
 // import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
 // offline plugin
@@ -22,7 +21,7 @@ const myMiddleware = store => next => action => {
 };
 
 // store
-const combine = combineReducers({ viewReducer });
+const combine = combineReducers({ IndexReducers });
 const store = createStore(combine, applyMiddleware(myMiddleware));
 
 // render

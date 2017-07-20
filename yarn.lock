@@ -228,17 +228,6 @@ autoprefixer@^6.0.2, autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.1.1.tgz#97bc854c7d0b979f8d6489de547a0d17fb307f6d"
-  dependencies:
-    browserslist "^2.1.3"
-    caniuse-lite "^1.0.30000670"
-    normalize-range "^0.1.2"
-    num2fraction "^1.2.2"
-    postcss "^6.0.1"
-    postcss-value-parser "^3.2.3"
-
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -1118,13 +1107,6 @@ browserslist@^1.0.0, browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^2.1.3:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.1.5.tgz#e882550df3d1cd6d481c1a3e0038f2baf13a4711"
-  dependencies:
-    caniuse-lite "^1.0.30000684"
-    electron-to-chromium "^1.3.14"
-
 buffer-xor@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
@@ -1208,10 +1190,6 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000686"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000686.tgz#d55b479ed6e6402c1fd3f1fd8f46e694d86ea464"
 
-caniuse-lite@^1.0.30000670, caniuse-lite@^1.0.30000684:
-  version "1.0.30000694"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000694.tgz#1492dab7c10c608c9d37a723e6e3e7873e0ce94f"
-
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -1233,7 +1211,7 @@ chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chokidar@^1.4.3, chokidar@^1.6.0:
+chokidar@^1.6.0, chokidar@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -1889,7 +1867,7 @@ ejs@^2.3.4:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.6.tgz#479636bfa3fe3b1debd52087f0acb204b4f19c88"
 
-electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.14:
+electron-to-chromium@^1.2.7:
   version "1.3.14"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.14.tgz#64af0f9efd3c3c6acd57d71f83b49ca7ee9c4b43"
 
@@ -1958,9 +1936,9 @@ engine.io@~1.8.4:
     engine.io-parser "1.3.2"
     ws "1.1.4"
 
-enhanced-resolve@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-3.1.0.tgz#9f4b626f577245edcf4b2ad83d86e17f4f421dec"
+enhanced-resolve@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-3.3.0.tgz#950964ecc7f0332a42321b673b38dc8ff15535b3"
   dependencies:
     graceful-fs "^4.1.2"
     memory-fs "^0.4.0"
@@ -3318,7 +3296,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3705,10 +3683,6 @@ object-component@0.0.3:
 object-hash@^1.1.4:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.1.8.tgz#28a659cf987d96a4dabe7860289f3b5326c4a03c"
-
-object-unfreeze@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/object-unfreeze/-/object-unfreeze-1.1.0.tgz#69628bea1f3c9d29f4eb0ba63b38002d70ea3ce9"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -4612,14 +4586,6 @@ rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
-
-react-css-modules@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-css-modules/-/react-css-modules-4.3.0.tgz#1415848f7d4478896b52422d6fef47002b8525e2"
-  dependencies:
-    hoist-non-react-statics "^1.2.0"
-    lodash "^4.16.6"
-    object-unfreeze "^1.1.0"
 
 react-deep-force-update@^2.0.1:
   version "2.0.1"
@@ -5538,6 +5504,15 @@ uglify-js@3.0.x:
     commander "~2.9.0"
     source-map "~0.5.1"
 
+uglify-js@^2.8.29:
+  version "2.8.29"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
+  dependencies:
+    source-map "~0.5.1"
+    yargs "~3.10.0"
+  optionalDependencies:
+    uglify-to-browserify "~1.0.0"
+
 "uglify-js@git://github.com/mishoo/UglifyJS2#harmony-v2.8.22":
   version "2.8.22"
   resolved "git://github.com/mishoo/UglifyJS2#278577f3cb75e72320564805ee91be63e5f9c806"
@@ -5551,11 +5526,12 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-0.4.4.tgz#7829c50ee5a5b755969d4458357ed5a2dd36fbbd"
+uglifyjs-webpack-plugin@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-0.4.6.tgz#b951f4abb6bd617e66f63eb891498e391763e309"
   dependencies:
     source-map "^0.5.6"
+    uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
 
 uid-number@^0.0.6:
@@ -5694,12 +5670,12 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-watchpack@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.3.1.tgz#7d8693907b28ce6013e7f3610aa2a1acf07dad87"
+watchpack@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.4.0.tgz#4a1472bcbb952bd0a9bb4036801f954dfb39faac"
   dependencies:
     async "^2.1.2"
-    chokidar "^1.4.3"
+    chokidar "^1.7.0"
     graceful-fs "^4.1.2"
 
 wbuf@^1.1.0, wbuf@^1.7.2:
@@ -5768,16 +5744,16 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.0.0.tgz#ee9bcebf21247f7153cb410168cab45e3a59d4d7"
+webpack@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.3.0.tgz#ce2f9e076566aba91f74887133a883fd7da187bc"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
     ajv "^5.1.5"
     ajv-keywords "^2.0.0"
     async "^2.1.2"
-    enhanced-resolve "^3.0.0"
+    enhanced-resolve "^3.3.0"
     escope "^3.6.0"
     interpret "^1.0.0"
     json-loader "^0.5.4"
@@ -5790,8 +5766,8 @@ webpack@^3.0.0:
     source-map "^0.5.3"
     supports-color "^3.1.0"
     tapable "~0.2.5"
-    uglifyjs-webpack-plugin "^0.4.4"
-    watchpack "^1.3.1"
+    uglifyjs-webpack-plugin "^0.4.6"
+    watchpack "^1.4.0"
     webpack-sources "^1.0.1"
     yargs "^6.0.0"
 

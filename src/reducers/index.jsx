@@ -1,6 +1,6 @@
-import { SEND_MESSAGE } from "../actions/viewIndex.jsx";
+import { SEND_MESSAGE } from "../actions/index.jsx";
 
-export function viewReducer(state, action) {
+export function IndexReducers(state, action) {
   if (!state) {
     state = {
       message: `
