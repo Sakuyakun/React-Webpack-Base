@@ -6,8 +6,8 @@ React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/Re
 如果有错误或者好的建议请联系我。计划日后会用这个环境来写一套自己的组件库。
 
 # Feature
-- 主要技术栈 React15 React-Redux5 React-Router4 SASS ES6/7
-- 使用 React CSS Modules 与 PostCSS 进行处理
+- 技术栈 React15 Immutable.js React-Redux5 React-Router4 ES6/7
+- 使用 SASS预处理器 或 Aphrodite CSS-in-JS库
 - 使用 Webpack3 进行处理打包
 - 使用 Hot Module Replacement 热加载
 - 使用 ESlint 代码检测与 Prettier 格式化
