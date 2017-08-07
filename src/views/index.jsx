@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../assets/css/viewindex.scss";
+import styles from "../assets/css/viewindex";
 
 class Index extends Component {
   constructor(props) {
@@ -10,8 +10,11 @@ class Index extends Component {
     return (
       <div>
         <span className={styles.title}>
-          ES2015/2016 SASS<br />
+          环境配置<br /><br />
+          ES2015/2016<br />
+          SASS or Aphrodite(css in js)<br />
           React <br />
+          Immutable <br />
           React-Redux <br />
           React-Router4 <br />
           Webpack3 <br />

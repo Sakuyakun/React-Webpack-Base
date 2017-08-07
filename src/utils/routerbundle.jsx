@@ -6,7 +6,6 @@ export default class Bundle extends Component {
   }
   componentWillMount() {
     this.load(this.props)
-    console.log(this.props)
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.load !== this.props.load) {

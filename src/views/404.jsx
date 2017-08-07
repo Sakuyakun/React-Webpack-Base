@@ -2,6 +2,6 @@ import React, { Component } from "react";
 
 export default class NotMatch extends Component {
   render() {
-    return <div>Page not found</div>;
+    return <div style={{color: '#cccccc'}}>Sorry, Page not found !</div>;
   }
 }

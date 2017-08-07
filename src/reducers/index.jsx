@@ -1,4 +1,4 @@
-import { SEND_MESSAGE } from "../actions/index.jsx";
+import { SEND_MESSAGE } from "../actions/about";
 
 export function IndexReducers(state, action) {
   if (!state) {

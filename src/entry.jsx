@@ -6,12 +6,12 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { IndexReducers } from "./reducers/index";
 import normalize from "./normalize.scss";
-// import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
 // offline plugin
-// if (process.env.NODE_ENV === "production") {
-//   OfflinePluginRuntime.install();
-// }
+if (process.env.NODE_ENV === "production") {
+  OfflinePluginRuntime.install();
+}
 
 // 自定义中间件
 const myMiddleware = store => next => action => {
