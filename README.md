@@ -1,13 +1,14 @@
 # Boilerplate
+
 ![yorha](http://i1.buimg.com/1949/27e7fae307f7a4aa.png)
 
-React单页面开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。
+这可能是对萌新最友好的React单页面基础开发环境，[测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。
 
-如果有错误或者好的建议请联系我。计划日后会用这个环境来写一套自己的组件库。
+如果有错误或者好的建议请联系我。目前正使用该环境开发组件库。
 
 # Feature
-- 技术栈 React15 Immutable.js React-Redux5 React-Router4 ES6/7
-- 使用 SASS预处理器 或 Aphrodite CSS-in-JS库
+- React15 Immutable.js React-Redux5 React-Router4 ES6/7
+- 可选 SASS 或 Aphrodite CSS-in-JS库写CSS，使用 PostCSS 处理 
 - 使用 Webpack3 进行处理打包
 - 使用 Hot Module Replacement 热加载
 - 使用 ESlint 代码检测与 Prettier 格式化
