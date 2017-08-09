@@ -17,15 +17,19 @@
   },
   "lint-staged": {
     "src/**/*.jsx": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   },
   "dependencies": {
     "aphrodite": "^1.2.3",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
+    "clone": "^2.1.1",
     "history": "^4.6.3",
+    "husky": "^0.14.3",
     "immutable": "^3.8.1",
+    "lint-staged": "^4.0.3",
     "moment": "^2.18.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

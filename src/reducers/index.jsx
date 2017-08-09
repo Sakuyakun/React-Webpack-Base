@@ -1,24 +1,20 @@
-import { SEND_MESSAGE } from "../actions/about";
+import { ActionTypes } from "../actions/about";
+import { Map } from "immutable";
 
-export function IndexReducers(state, action) {
-  if (!state) {
-    state = {
-      message: `
-        REACT SPA开发环境搭建练习用，
-        目前依旧存在许多不完善的地方。
-        如果有好的搭建建议请在Issues告诉我。
-        github.com/Sakuyakun/React-Webpack-Base/issues
-        Sakuya 2017/06/15
-      `
-    };
+const initialState = Map({
+  day: "2017/01/01"
+});
+
+const actionType = {
+  [ActionTypes.SET_DAY]: (state, { day }) => {
+    return state.set("day", day);
   }
-  switch (action.type) {
-    case SEND_MESSAGE:
-      return {
-        ...state,
-        ...action.data
-      };
-    default:
-      return state;
-  }
-}
+};
+
+const IndexReducers = (state = initialState, action) => {
+  return action.type in actionType
+    ? actionType[action.type](state, action)
+    : state;
+};
+
+export default IndexReducers;

@@ -4,12 +4,13 @@ import ReactDOM from "react-dom";
 import Routers from "./routers.jsx";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { IndexReducers } from "./reducers/index";
+import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
 // offline plugin
 if (process.env.NODE_ENV === "production") {
+  console.log("run offline plugin");
   OfflinePluginRuntime.install();
 }
 
