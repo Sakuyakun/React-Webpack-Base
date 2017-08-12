@@ -12,7 +12,7 @@
 - 使用 Webpack3 进行处理打包
 - 使用 Hot Module Replacement 热加载
 - 使用 ESlint 代码检测与 Prettier 格式化
-- 代码压缩，文件添加MD5缓存处理
+- 代码压缩，文件后缀MD5缓存处理
 
 # Run
 `npm run start` 开发环境启动
