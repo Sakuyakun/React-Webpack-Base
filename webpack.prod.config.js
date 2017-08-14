@@ -6,6 +6,7 @@ const OfflinePlugin = require("offline-plugin")
 const { baseConfig, extractPlugin } = require("./webpack.config.js");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const Clean = require("clean-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const prodConfig = {
   entry: {
@@ -17,7 +18,10 @@ const prodConfig = {
       "react-redux",
       "react-router-dom",
       "classnames",
-      "moment"
+      "moment",
+      "clone",
+      "history",
+      "immutable"
     ]
   },
   output: {
@@ -27,6 +31,7 @@ const prodConfig = {
   },
   plugins: [
     extractPlugin,
+    new BundleAnalyzerPlugin(),
     new Clean(path.resolve(__dirname, "dist")),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
@@ -50,10 +55,12 @@ const prodConfig = {
     new UglifyJSPlugin({
       compress: {
         warnings: false,
-        drop_console: true
+        drop_console: true,
+        pure_funcs: ['console.log']
       },
-      beautify: false
-    }),
+      beautify: false,
+      sourceMap: false
+      }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
