@@ -4,15 +4,17 @@ const node_modules = path.resolve(__dirname, "node_modules");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const env = process.env.NODE_ENV;
 
-let scssRule = null;
 const extractPlugin = new ExtractTextPlugin({
   filename: "[name].[chunkhash].css",
   ignoreOrder: true, //禁用顺序检查
   allChunks: true
 });
 
-if (env === 'development') {
-  scssRule = [{
+let cssrule = null
+
+// 开发环境 不分离css文件
+const dev_cssRule = [
+  {
     test: /\.scss$/,
     include: path.resolve(__dirname, "src"),
     use: [
@@ -30,10 +32,30 @@ if (env === 'development') {
       { loader:"postcss-loader", options: { sourceMap: true } },
       { loader:"sass-loader", options: { sourceMap: true } }
     ]
-  }]
-} else if (env === 'production') {
-  // 部署环境 分离样式
-  scssRule = [{
+  },
+  {
+    test: /\.css$/,
+    include: path.resolve(__dirname, "src"),
+    use: [
+      "style-loader",
+      {
+        loader: "css-loader",
+        options: {
+          modules: true,
+          localIdentName: "[name]__[local]--[hash:base64:5]",
+          Composing: true,
+          sourceMap: true,
+          importLoaders: 1
+        }
+      },
+      { loader:"postcss-loader", options: { sourceMap: true } },
+    ]
+  }
+]
+
+// 开发环境 分离css文件
+const prod_cssRule = [
+  {
     test: /\.scss$/,
     include: path.resolve(__dirname, "src"),
     use: extractPlugin.extract({
@@ -53,14 +75,38 @@ if (env === 'development') {
       ],
       fallback: "style-loader"
     })
-  }];
-}
+  },
+  {
+    test: /\.css$/,
+    include: path.resolve(__dirname, "src"),
+    use: extractPlugin.extract({
+      use: [
+        {
+          loader: "css-loader",
+          options: {
+            modules: true,
+            localIdentName: "[name]__[local]--[hash:base64:5]",
+            Composing: true,
+            sourceMap: true,
+            importLoaders: 1
+          }
+        },
+        { loader: "postcss-loader" },
+      ],
+      fallback: "style-loader"
+    })
+  },
+]
+
+env === "development" ? (cssrule = dev_cssRule) : (cssrule = prod_cssRule)
 
 const baseConfig = {
-  resolve: { extensions: [".jsx", ".js", ".json", ".scss"] },
+  resolve: { 
+    extensions: [".jsx", ".js", ".json", ".scss", ".css"]
+  },
   module: {
     rules: [
-      ...scssRule,
+      ...cssrule,
       {
         loader: "eslint-loader",
         test: /\.(js|jsx)$/,
@@ -74,7 +120,7 @@ const baseConfig = {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, "./src"),
         use: {
-          loader: "babel-loader",
+          loader: "babel-loader?cacheDirectory=true",
         }
       },
       {
@@ -95,7 +141,7 @@ const baseConfig = {
       }
     ]
   }
-};
+}
 
 module.exports = {
   baseConfig,
