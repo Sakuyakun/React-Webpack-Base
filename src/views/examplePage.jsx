@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { Map, is } from "immutable";
 import pureRender from "../utils/immutable-pure-render-decorator";
-
-// 使用css in js
-import { StyleSheet, css } from "aphrodite";
-import styles from "../assets/css-in-js/examplePage";
-const injs = StyleSheet.create(styles);
+import { css, withStyles } from "../withStyles";
 
 @pureRender
 class ShowName extends Component {
@@ -38,7 +34,13 @@ class ShowGame extends Component {
   }
 }
 
-class ExamplePage extends Component {
+@withStyles(({ color }) => ({
+  compContent: {
+    fontSize: "16px",
+    color: color.text
+  }
+}))
+export default class ExamplePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,9 +52,11 @@ class ExamplePage extends Component {
   }
   render() {
     const { info } = this.state;
+    const { styles } = this.props;
+
     return (
       <div>
-        <div className={css(injs.title)}>
+        <div {...css(styles.compContent)}>
           <ShowName val={info.get("name")} />
           <ShowGame val={info.get("game")} />
         </div>
@@ -60,5 +64,3 @@ class ExamplePage extends Component {
     );
   }
 }
-
-export default ExamplePage;

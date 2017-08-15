@@ -37,7 +37,6 @@
     "no-caller": "error",
     "no-case-declarations": "error",
     "no-else-return": "error",
-    "no-empty-function": "error",
     "no-empty-pattern": "error",
     "no-redeclare": "error",
     "no-delete-var": "error",

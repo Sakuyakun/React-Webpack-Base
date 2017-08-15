@@ -16,12 +16,13 @@ const prodConfig = {
       "react-dom",
       "redux",
       "react-redux",
-      "react-router-dom",
+      "react-router",
       "classnames",
-      "moment",
+      "spacetime",
       "clone",
       "history",
-      "immutable"
+      "immutable",
+      "aphrodite"
     ]
   },
   output: {
@@ -60,7 +61,7 @@ const prodConfig = {
       },
       beautify: false,
       sourceMap: false
-      }),
+    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",

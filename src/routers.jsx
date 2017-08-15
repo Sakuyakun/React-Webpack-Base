@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./style.scss";
+import { css, withStyles } from "./withStyles";
 
 // 使用BrowserRouter需nginx做处理
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
@@ -31,20 +31,50 @@ const ExamplePage = () =>
     {ExamplePage => <ExamplePage />}
   </Bundle>;
 
-class Routers extends Component {
+// 背景图
+import nier2b from "./assets/images/nier2b.jpg";
+
+@withStyles(({ color }) => ({
+  view: {
+    position: "absolute",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    top: "0",
+    background: `url(${nier2b})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    display: "flex",
+    flexDirection: "column"
+  },
+  toparea: {
+    height: "100px",
+    lineHeight: "100px",
+    background: "rgba(0,0,0,.4)",
+    boxShadow: "0px -2px 6px 3px rgba(0, 0, 0, .4)"
+  },
+  bottomarea: {
+    padding: "30px",
+    flexGrow: "1",
+    flexShrink: "1",
+    flexBasis: "0%"
+  }
+}))
+export default class Routers extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const { styles } = this.props;
     return (
       <Router history={history}>
-        <div className={styles.view}>
+        <div {...css(styles.view)}>
           {/* Router顶部导航 */}
-          <div className={styles.toparea}>
+          <div {...css(styles.toparea)}>
             <Navigation />
           </div>
           {/* Router内容 */}
-          <div className={styles.bottomarea}>
+          <div {...css(styles.bottomarea)}>
             <Switch>
               <Route component={Index} exact path="/" />
               <Route component={ExamplePage} path="/examplepage" />
@@ -57,5 +87,3 @@ class Routers extends Component {
     );
   }
 }
-
-export default Routers;

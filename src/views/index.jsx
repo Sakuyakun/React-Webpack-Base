@@ -1,16 +1,23 @@
 import React, { Component } from "react";
+import { css, withStyles } from "../withStyles";
 
-import styles from "../assets/css/viewindex";
-
-class Index extends Component {
+@withStyles(({ color }) => ({
+  title: {
+    fontSize: "16px",
+    color: color.text
+  }
+}))
+export default class Index extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const { styles } = this.props;
     return (
       <div>
-        <span className={styles.title}>
-          环境配置<br /><br />
+        <span {...css(styles.title)}>
+          环境配置<br />
+          <br />
           ES2015/2016<br />
           SASS or Aphrodite(css in js)<br />
           React <br />
@@ -24,5 +31,3 @@ class Index extends Component {
     );
   }
 }
-
-export default Index;
