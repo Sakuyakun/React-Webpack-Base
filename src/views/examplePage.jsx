@@ -2,54 +2,24 @@ import React, { Component } from "react";
 import { Map, is } from "immutable";
 import pureRender from "../utils/immutable-pure-render-decorator";
 import { css, withStyles } from "../withStyles";
+import Comp from "../component/comp";
 
 @pureRender
-class ShowName extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    let { val } = this.props;
-    val = val + " & A2";
-    return (
-      <div>
-        队伍成员：{val}
-      </div>
-    );
-  }
-}
-
-@pureRender
-class ShowGame extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    let { val } = this.props;
-    return (
-      <div>
-        队伍名称：{val}
-      </div>
-    );
-  }
-}
-
 @withStyles(({ color }) => ({
   compContent: {
-    fontSize: "16px",
     color: color.text
   }
 }))
 export default class ExamplePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      info: Map({
-        name: "2B",
-        game: "Yorha"
-      })
-    };
-  }
+  state = {
+    info: [
+      "component 1 content in yorha",
+      "component 2 content in yorha",
+      "component 3 content in yorha",
+      "component 4 content in yorha",
+      "component 5 content in yorha"
+    ]
+  };
   render() {
     const { info } = this.state;
     const { styles } = this.props;
@@ -57,8 +27,7 @@ export default class ExamplePage extends Component {
     return (
       <div>
         <div {...css(styles.compContent)}>
-          <ShowName val={info.get("name")} />
-          <ShowGame val={info.get("game")} />
+          {info.map(item => <Comp content={item} />)}
         </div>
       </div>
     );

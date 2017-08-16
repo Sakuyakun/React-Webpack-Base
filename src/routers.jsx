@@ -51,7 +51,8 @@ import nier2b from "./assets/images/nier2b.jpg";
     height: "100px",
     lineHeight: "100px",
     background: "rgba(0,0,0,.4)",
-    boxShadow: "0px -2px 6px 3px rgba(0, 0, 0, .4)"
+    boxShadow: "0px -2px 6px 3px rgba(0, 0, 0, .4)",
+    position: "relative"
   },
   bottomarea: {
     padding: "30px",

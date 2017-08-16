@@ -3,7 +3,6 @@ import { css, withStyles } from "../withStyles";
 
 @withStyles(({ color }) => ({
   title: {
-    fontSize: "16px",
     color: color.text
   }
 }))
@@ -16,12 +15,12 @@ export default class Index extends Component {
     return (
       <div>
         <span {...css(styles.title)}>
-          环境配置<br />
+          基础环境<br />
           <br />
           ES2015/2016<br />
           SASS or Aphrodite(css in js)<br />
           React <br />
-          Immutable <br />
+          Immutable.js <br />
           React-Redux <br />
           React-Router4 <br />
           Webpack3 <br />

@@ -68,6 +68,11 @@ const prodConfig = {
       minChunks: Infinity
     }),
     new DashboardPlugin(),
+    new OfflinePlugin({
+      ServiceWorker: {
+        navigateFallbackURL: '/'
+      },
+    })
   ]
 };
 

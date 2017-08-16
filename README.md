@@ -15,7 +15,6 @@ Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO�
 - 使用 Hot Module Replacement 热加载
 - 使用 ESlint 代码检测与 Prettier 格式化
 - 启用 UglifyJS 代码压缩，文件后缀添加 MD5 缓存处理
-- 启用 Webpack-Bundle-Analyzer 可视化工具分析打包大小
 
 # Directory Layout
 ```
@@ -32,7 +31,6 @@ Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO�
 │   ├── entry.jsx                  # 入口文件
 │   ├── routers.jsx                # React Router 路由文件
 │   ├── normalize.scss             # normalize
-│   ├── style.scss                 # 公共样式
 │   └── withStyles.js              # withStyles
 ├── index.html                     # devServer 主页
 ├── package-lock.json              # package 锁文件

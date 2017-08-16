@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import { css, withStyles } from "../withStyles";
 
-export default class NotMatch extends Component {
-  render() {
-    return <div style={{color: '#cccccc'}}>Sorry, Page not found !</div>;
-  }
+function NotMatch({ styles }) {
+  return <div {...css(styles.color)}>Sorry, Page not found !</div>;
 }
+
+export default withStyles(({ color }) => ({
+  compContent: {
+    color: color.text
+  }
+}))(NotMatch);

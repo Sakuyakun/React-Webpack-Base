@@ -6,8 +6,8 @@ const initialState = Map({
 });
 
 const actionType = {
-  [ActionTypes.SET_DAY]: (state, { day }) => {
-    return state.set("day", day);
+  [ActionTypes.SET_DAY]: (state, action) => {
+    return state.set("day", action.day);
   }
 };
 

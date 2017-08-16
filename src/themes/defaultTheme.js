@@ -1,6 +1,7 @@
 export default {
   color: {
     text: '#ccc',
-    linkhover: 'white'
+    linkhover: 'white',
+    icon: 'white'
   },
 };

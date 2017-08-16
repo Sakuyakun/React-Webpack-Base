@@ -124,12 +124,22 @@ const baseConfig = {
         }
       },
       {
-        test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
-        use: ["url-loader"]
+        test: /\.(png|jpg|ico)$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 8192
+            }
+        }]
       },
       {
-        test: /\.(png|jpg|ico)$/,
-        loader: "url-loader?limit=1000&name=assets/[name].[ext]"
+        test: /\.(ttf|otf|woff|woff2|eot)$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 8192
+            }
+        }]
       },
       {
         test: /\.svg$/,
@@ -137,7 +147,7 @@ const baseConfig = {
       },
       {
         test: /\.json?$/,
-        loader: "json"
+        loader: "json-loader"
       }
     ]
   }

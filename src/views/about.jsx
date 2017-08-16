@@ -7,7 +7,7 @@ import { css, withStyles } from "../withStyles";
 @connect(
   state => {
     return {
-      day: state.IndexReducers.get("day")
+      day: state.IndexReducers.getIn(["day"])
     };
   },
   dispatch => {
@@ -20,7 +20,6 @@ import { css, withStyles } from "../withStyles";
 )
 @withStyles(({ color }) => ({
   title: {
-    fontSize: "16px",
     color: color.text
   }
 }))
@@ -33,10 +32,10 @@ export default class About extends Component {
     return (
       <div>
         <span {...css(styles.title)}>
-          React SPA开发环境搭建练习用<br />
-          如果有好的搭建建议请发issues告诉我 <br />
-          github.com/Sakuyakun/React-Webpack-Base/issues <br />
+          有错误或者好的建议请联系我 <br />
+          正使用该环境开发组件库 <br />
           <br />
+          壁纸 by WLOP<br />
           {this.props.day}
         </span>
       </div>

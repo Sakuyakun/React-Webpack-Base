@@ -8,10 +8,18 @@ import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
-// offline plugin
+// offline plugin 自行选择是否开启
 if (process.env.NODE_ENV === "production") {
-  console.log("run offline plugin");
   OfflinePluginRuntime.install();
+
+  // 注销serviceWorker方案
+  // if ('serviceWorker' in navigator) {
+  //   navigator.serviceWorker.getRegistration().then((registration) => {
+  //     registration && registration.unregister().then((boolean) => {
+  //       boolean ? alert('注销成功') : alert('注销失败')
+  //     });
+  //   })
+  // }
 }
 
 // 自定义中间件
