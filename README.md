@@ -2,7 +2,7 @@
 
 ![](https://i.loli.net/2017/08/15/5992f8eda519d.png)
 
-Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO测试页面预览](https://sakuyakun.github.io/React-Webpack-Boilerplate/)。
+Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO测试页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)。
 
 如果有错误或者好的建议请联系我，正在使用该环境开发组件库。
 
@@ -15,6 +15,7 @@ Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO�
 - 使用 Hot Module Replacement 热加载
 - 使用 ESlint 代码检测与 Prettier 格式化
 - 启用 UglifyJS 代码压缩，文件后缀添加 MD5 缓存处理
+- 启用 offline plugin 可离线浏览网页
 
 # Directory Layout
 ```
