@@ -3,7 +3,18 @@ import { css, withStyles } from "../withStyles";
 
 @withStyles(({ color }) => ({
   title: {
-    color: color.text
+    color: color.text,
+    fontWeight: "100",
+    transform: "translateY(-75px)",
+    "-webkit-font-smoothing": "antialiased",
+    fontSize: "50px"
+  },
+  index: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%"
   }
 }))
 export default class Index extends Component {
@@ -13,19 +24,8 @@ export default class Index extends Component {
   render() {
     const { styles } = this.props;
     return (
-      <div>
-        <span {...css(styles.title)}>
-          基础环境<br />
-          <br />
-          ES2015/2016<br />
-          SASS or Aphrodite(css in js)<br />
-          React <br />
-          Immutable.js <br />
-          React-Redux <br />
-          React-Router4 <br />
-          Webpack3 <br />
-          Simple Production Boilerplate
-        </span>
+      <div {...css(styles.index)}>
+        <span {...css(styles.title)}>Yorha Boilerplate</span>
       </div>
     );
   }

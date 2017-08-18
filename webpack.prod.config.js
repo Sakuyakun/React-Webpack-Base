@@ -51,7 +51,7 @@ const prodConfig = {
         minifyCSS: true,
         minifyURLs: true
       },
-      favicon: path.resolve(__dirname, 'src/assets/images/favicon.ico')
+      favicon: path.resolve(__dirname, 'src/assets/images/favicon.png')
     }),
     new UglifyJSPlugin({
       compress: {
@@ -64,8 +64,7 @@ const prodConfig = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      minChunks: Infinity
+      names: ['vendor', 'manifest']
     }),
     new DashboardPlugin(),
     new OfflinePlugin({

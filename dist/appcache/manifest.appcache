@@ -1,16 +1,17 @@
 CACHE MANIFEST
-#ver:2017-8-16 20:05:52
+#ver:2017-8-19 01:21:46
 #plugin:4.8.3
 
 CACHE:
-../3c661da339aad66540b9a23aff8ba521.jpg
-../0.8e5b8eb5f45dd3183cfa.js
-../1.7d6fa3f29c667af38666.js
-../2.5dfd4ea90783fe1e35d4.js
-../app.044c017b0866601f04cb.js
-../vendor.d2ac729cce8a25bbf468.js
-../app.044c017b0866601f04cb.css
-../favicon.ico
+../1b87db46e004472097f9555a705ee6a2.jpg
+../0.1e4add5514eac9d112e1.js
+../1.f70ab385f9e2890ba9f3.js
+../2.edb267d0d94f5a169a6b.js
+../vendor.a6a69b9f4d1d4a8db57d.js
+../app.85046ca68cf574d14068.js
+../manifest.aacf6d4fe7d6c07d8b69.js
+../app.85046ca68cf574d14068.css
+../favicon.png
 ../
 
 NETWORK:

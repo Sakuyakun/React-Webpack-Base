@@ -1,6 +1,6 @@
 # Introduction
 
-![](https://i.loli.net/2017/08/15/5992f8eda519d.png)
+![](https://i.loli.net/2017/08/19/5997220b136c7.png)
 
 Yorha-Boilerplate 可能是最简单友好的React单页面开发环境，[DEMO测试页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)。
 

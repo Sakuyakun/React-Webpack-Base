@@ -27,7 +27,7 @@ export default class ExamplePage extends Component {
     return (
       <div>
         <div {...css(styles.compContent)}>
-          {info.map(item => <Comp content={item} />)}
+          {info.map((item, index) => <Comp key={index} content={item} />)}
         </div>
       </div>
     );

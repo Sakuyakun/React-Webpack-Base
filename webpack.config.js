@@ -124,21 +124,31 @@ const baseConfig = {
         }
       },
       {
-        test: /\.(png|jpg|ico)$/,
+        test: /favicon\.png$/,
         use: [{
-            loader: 'url-loader',
-            options: {
-                limit: 8192
-            }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]?[hash]'
+          }
         }]
       },
       {
-        test: /\.(ttf|otf|woff|woff2|eot)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
+        exclude: /favicon\.png$/,
         use: [{
-            loader: 'url-loader',
-            options: {
-                limit: 8192
-            }
+          loader: 'url-loader',
+          options: {
+              limit: 8192
+          }
+        }]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|svg|svgz)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+              limit: 8192
+          }
         }]
       },
       {

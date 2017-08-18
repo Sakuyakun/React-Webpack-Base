@@ -32,10 +32,11 @@ export default class About extends Component {
     return (
       <div>
         <span {...css(styles.title)}>
-          有错误或者好的建议请联系我 <br />
-          正使用该环境开发组件库 <br />
+          配置文件有错误或者好的建议请联系我 <br />
+          正使用该环境开发组件库 Yorha-Component <br />
           <br />
           壁纸 by WLOP<br />
+          <br />
           {this.props.day}
         </span>
       </div>

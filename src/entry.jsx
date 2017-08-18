@@ -3,6 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Routers from "./routers.jsx";
 import { Provider } from "react-redux";
+import HashRouter from "react-router-dom/HashRouter";
+import createHistory from "history/createHashHistory";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
@@ -22,6 +24,8 @@ if (process.env.NODE_ENV === "production") {
   // }
 }
 
+const history = createHistory();
+
 // 自定义中间件
 const myMiddleware = store => next => action => {
   // some code ...
@@ -39,7 +43,9 @@ const render = () => {
   ReactDOM.render(
     <HotReloader>
       <Provider store={store}>
-        <Routers />
+        <HashRouter history={history}>
+          <Routers />
+        </HashRouter>
       </Provider>
     </HotReloader>,
     rootEle

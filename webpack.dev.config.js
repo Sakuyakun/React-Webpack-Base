@@ -16,7 +16,7 @@ const devConfig = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/static/"
+    publicPath: "/"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

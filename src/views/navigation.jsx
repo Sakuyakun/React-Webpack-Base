@@ -32,7 +32,7 @@ export default class Navigation extends Component {
           {...css(styles.link, location.pathname === "/" && styles.link_hover)}
           to="/"
         >
-          Index
+          index
         </Link>
         <Link
           {...css(
@@ -41,7 +41,7 @@ export default class Navigation extends Component {
           )}
           to="/examplepage"
         >
-          Example
+          examplepage
         </Link>
         <Link
           {...css(
@@ -50,7 +50,7 @@ export default class Navigation extends Component {
           )}
           to="/about"
         >
-          About
+          about
         </Link>
 
         <a
