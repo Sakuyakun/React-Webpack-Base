@@ -4,10 +4,12 @@ import { css, withStyles } from "../withStyles";
 @withStyles(({ color }) => ({
   title: {
     color: color.text,
+    fontSize: "50px",
     fontWeight: "100",
-    transform: "translateY(-75px)",
     "-webkit-font-smoothing": "antialiased",
-    fontSize: "50px"
+    "-webkit-text-stroke": "1px white",
+    "-webkit-text-fill-color": "transparent",
+    transform: "translateY(-75px)"
   },
   index: {
     display: "flex",

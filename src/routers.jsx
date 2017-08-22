@@ -7,6 +7,7 @@ import {
   withRouter
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import routerts from "./transtion.scss";
 
 // Router
 import Navigation from "./views/navigation";
@@ -67,27 +68,6 @@ import hotaru from "./assets/images/64495434_p0.jpg";
     zIndex: "1",
     padding: "130px 30px 30px 30px",
     boxSizing: "border-box"
-  },
-  fadeAppear: {
-    opacity: "0"
-  },
-  fadeEnter: {
-    opacity: "0"
-  },
-  fadeAppearActive: {
-    transition: "opacity .3s linear",
-    opacity: "1"
-  },
-  fadeEnterActive: {
-    transition: "opacity .3s linear",
-    opacity: "1"
-  },
-  fadeExit: {
-    transition: "opacity .2s linear",
-    opacity: "1"
-  },
-  fadeExitActive: {
-    opacity: "0"
   }
 }))
 export default class Routers extends Component {
@@ -113,10 +93,10 @@ export default class Routers extends Component {
             key={currentKey}
             timeout={timeout}
             classNames={{
-              enter: css(styles.fadeEnter).className,
-              enterActive: css(styles.fadeEnterActive).className,
-              exit: css(styles.fadeExit).className,
-              exitActive: css(styles.fadeExitActive).className
+              enter: routerts.fadeEnter,
+              enterActive: routerts.fadeEnterActive,
+              exit: routerts.fadeExit,
+              exitActive: routerts.fadeExitActive
             }}
           >
             <div {...css(styles.bottomarea)}>

@@ -1,0 +1,22 @@
+.fadeAppear{
+  opacity: 0
+}
+.fadeEnter {
+  opacity: 0
+}
+
+.fadeAppearActive {
+  transition: opacity .3s linear;
+  opacity: 1;
+}
+.fadeEnterActive {
+  transition: opacity .3s linear;
+  opacity: 1;
+}
+.fadeExit {
+  transition: opacity .2s linear;
+  opacity: 1;
+}
+.fadeExitActive {
+  opacity: 0;
+}
