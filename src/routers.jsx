@@ -6,6 +6,8 @@ import {
   Switch,
   withRouter
 } from "react-router-dom";
+
+// React Router过渡动画
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import routerts from "./transtion.scss";
 

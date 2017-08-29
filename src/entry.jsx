@@ -9,22 +9,25 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
+import { ThemeProvider } from "./withStyles.js";
 
 // offline plugin 自行选择是否开启
 if (process.env.NODE_ENV === "production") {
   OfflinePluginRuntime.install();
-
-  // 注销serviceWorker方案
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.getRegistration().then((registration) => {
-  //     registration && registration.unregister().then((boolean) => {
-  //       boolean ? alert('注销成功') : alert('注销失败')
-  //     });
-  //   })
-  // }
 }
+// 注销serviceWorker方案
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.getRegistration().then((registration) => {
+//     registration && registration.unregister().then((boolean) => {
+//       boolean ? alert('注销成功') : alert('注销失败')
+//     });
+//   })
+// }
 
 const history = createHistory();
+
+// 控制主题
+const ThemeProviderName = "default";
 
 // 自定义中间件
 const myMiddleware = store => next => action => {
@@ -43,9 +46,11 @@ const render = () => {
   ReactDOM.render(
     <HotReloader>
       <Provider store={store}>
-        <HashRouter history={history}>
-          <Routers />
-        </HashRouter>
+        <ThemeProvider name={ThemeProviderName}>
+          <HashRouter history={history}>
+            <Routers />
+          </HashRouter>
+        </ThemeProvider>
       </Provider>
     </HotReloader>,
     rootEle

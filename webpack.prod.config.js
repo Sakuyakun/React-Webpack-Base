@@ -10,20 +10,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const prodConfig = {
   entry: {
-    app: path.resolve(__dirname, "src/entry"),
-    vendor: [
-      "react",
-      "react-dom",
-      "redux",
-      "react-redux",
-      "react-router",
-      "classnames",
-      "spacetime",
-      "clone",
-      "history",
-      "immutable",
-      "aphrodite"
-    ]
+    app: path.resolve(__dirname, "src/entry")
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -64,7 +51,22 @@ const prodConfig = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+      name: 'vendor',
+      minChunks: module => {
+        return module.resource && /node_modules/.test(module.resource)
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'client',
+      async: 'chunk-vendor',
+      children: true,
+      minChunks: (module, count) => {
+        return count >= 3
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "runtime",
+      minChunks: Infinity
     }),
     new DashboardPlugin(),
     new OfflinePlugin({

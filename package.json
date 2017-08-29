@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "export NODE_ENV=development && webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --colors",
-    "build": "export NODE_ENV=production && webpack-dashboard -- webpack -p --config webpack.prod.config.js --progress --colors",
+    "start": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --colors",
+    "build": "cross-env NODE_ENV=production webpack-dashboard -- webpack -p --config webpack.prod.config.js --progress --colors",
     "lint": "eslint ./src/**/*.jsx --color",
     "precommit": "lint-staged"
   },
@@ -53,6 +53,7 @@
     "bundle-loader": "^0.5.5",
     "chunk-manifest-webpack-plugin": "^1.1.0",
     "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.5",
     "eslint": "^4.5.0",
     "eslint-loader": "^1.8.0",
