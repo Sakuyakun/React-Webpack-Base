@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import Routers from "./routers.jsx";
 import { Provider } from "react-redux";
 import HashRouter from "react-router-dom/HashRouter";
-import createHistory from "history/createHashHistory";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
@@ -24,7 +23,10 @@ if (process.env.NODE_ENV === "production") {
 //   })
 // }
 
-const history = createHistory();
+// hashrouter包含history属性会出现控制台警告，建议使用browserHistory
+// import createHistory from "history/createHashHistory";
+// const hashhistory = createHistory();
+// <HashRouter history={hashhistory}></HashRouter>
 
 // 控制主题
 const ThemeProviderName = "default";
@@ -47,7 +49,7 @@ const render = () => {
     <HotReloader>
       <Provider store={store}>
         <ThemeProvider name={ThemeProviderName}>
-          <HashRouter history={history}>
+          <HashRouter>
             <Routers />
           </HashRouter>
         </ThemeProvider>
