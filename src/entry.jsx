@@ -8,7 +8,6 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import IndexReducers from "./reducers/index";
 import normalize from "./normalize.scss";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import { ThemeProvider } from "./withStyles.js";
 
 // offline plugin 自行选择是否开启
 if (process.env.NODE_ENV === "production") {
@@ -28,9 +27,6 @@ if (process.env.NODE_ENV === "production") {
 // const hashhistory = createHistory();
 // <HashRouter history={hashhistory}></HashRouter>
 
-// 控制主题
-const ThemeProviderName = "default";
-
 // 自定义中间件
 const myMiddleware = store => next => action => {
   // some code ...
@@ -48,11 +44,9 @@ const render = () => {
   ReactDOM.render(
     <HotReloader>
       <Provider store={store}>
-        <ThemeProvider name={ThemeProviderName}>
-          <HashRouter>
-            <Routers />
-          </HashRouter>
-        </ThemeProvider>
+        <HashRouter>
+          <Routers />
+        </HashRouter>
       </Provider>
     </HotReloader>,
     rootEle
