@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const OfflinePlugin = require("offline-plugin")
 const { baseConfig, extractPlugin } = require("./webpack.config.js");
-const DashboardPlugin = require("webpack-dashboard/plugin");
 const Clean = require("clean-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackMonitor = require('webpack-monitor');
 
 const prodConfig = {
   entry: {
@@ -19,7 +19,7 @@ const prodConfig = {
   },
   plugins: [
     extractPlugin,
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new Clean(path.resolve(__dirname, "dist")),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
@@ -68,12 +68,17 @@ const prodConfig = {
       name: "runtime",
       minChunks: Infinity
     }),
-    new DashboardPlugin(),
     new OfflinePlugin({
       ServiceWorker: {
         navigateFallbackURL: '/'
       },
-    })
+    }),
+    new WebpackMonitor({
+      capture: true,
+      target: './stats.json',
+      launch: true,
+      port: 8081,
+    }),
   ]
 };
 

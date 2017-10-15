@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --progress --colors",
-    "build": "cross-env NODE_ENV=production webpack-dashboard -- webpack -p --config webpack.prod.config.js --progress --colors",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js --progress --colors",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.config.js --progress --colors",
     "lint": "eslint ./src/**/*.jsx --color",
     "precommit": "lint-staged"
   },
@@ -75,7 +75,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.5.5",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dashboard": "^1.0.0-5",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.7.1",
+    "webpack-monitor": "^1.0.11"
   }
 }
