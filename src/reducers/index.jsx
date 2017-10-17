@@ -1,19 +1,22 @@
 import { ActionTypes } from "../actions/about";
-import { Map } from "immutable";
+import clone from 'clone';
 
-const initialState = Map({
+const initialState = {
   day: "2017/01/01"
-});
+};
 
 const actionType = {
   [ActionTypes.SET_DAY]: (state, action) => {
-    return state.set("day", action.day);
+    return {
+      ...state,
+      day: action.day
+    }
   }
 };
 
 const IndexReducers = (state = initialState, action) => {
   return action.type in actionType
-    ? actionType[action.type](state, action)
+    ? actionType[action.type](clone(state), action)
     : state;
 };
 

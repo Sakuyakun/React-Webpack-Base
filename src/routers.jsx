@@ -7,33 +7,12 @@ import {
   withRouter
 } from "react-router-dom";
 
-// React Router过渡动画
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import routerts from "./transtion.scss";
-
 // Router
 import Navigation from "./views/navigation";
+import Index from "./views/index";
+import About from "./views/about";
+import ExamplePage from "./views/examplePage";
 import NoMatch from "./views/404";
-
-//  按需加载
-import Bundle from "./utils/routerbundle";
-import IndexContainer from "bundle-loader?lazy!./views/index";
-import ExamplePageContainer from "bundle-loader?lazy!./views/examplePage";
-import AboutContainer from "bundle-loader?lazy!./views/about";
-
-//  异步引入
-const Index = () =>
-  <Bundle load={IndexContainer}>
-    {Index => <Index />}
-  </Bundle>;
-const About = () =>
-  <Bundle load={AboutContainer}>
-    {About => <About />}
-  </Bundle>;
-const ExamplePage = () =>
-  <Bundle load={ExamplePageContainer}>
-    {ExamplePage => <ExamplePage />}
-  </Bundle>;
 
 // 背景图
 import hotaru from "./assets/images/64495434_p0.jpg";
@@ -79,8 +58,6 @@ export default class Routers extends Component {
   render() {
     const { styles } = this.props;
     const { location } = this.props;
-    const currentKey = location.pathname.split("/")[1] || "/";
-    const timeout = { enter: 300, exit: 200 };
 
     return (
       <div {...css(styles.view)}>
@@ -89,48 +66,34 @@ export default class Routers extends Component {
           <Navigation />
         </div>
         {/* Component */}
-        <TransitionGroup>
-          <CSSTransition
-            appear
-            key={currentKey}
-            timeout={timeout}
-            classNames={{
-              enter: routerts.fadeEnter,
-              enterActive: routerts.fadeEnterActive,
-              exit: routerts.fadeExit,
-              exitActive: routerts.fadeExitActive
-            }}
-          >
-            <div {...css(styles.bottomarea)}>
-              <Switch location={location}>
-                <Route
-                  key={location.key}
-                  location={location}
-                  component={Index}
-                  exact
-                  path="/"
-                />
-                <Route
-                  key={location.key}
-                  location={location}
-                  component={ExamplePage}
-                  path="/examplepage"
-                />
-                <Route
-                  key={location.key}
-                  location={location}
-                  component={About}
-                  path="/about"
-                />
-                <Route
-                  key={location.key}
-                  location={location}
-                  component={NoMatch}
-                />
-              </Switch>
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
+        <div {...css(styles.bottomarea)}>
+          <Switch location={location}>
+            <Route
+              key={location.key}
+              location={location}
+              component={Index}
+              exact
+              path="/"
+            />
+            <Route
+              key={location.key}
+              location={location}
+              component={ExamplePage}
+              path="/examplepage"
+            />
+            <Route
+              key={location.key}
+              location={location}
+              component={About}
+              path="/about"
+            />
+            <Route
+              key={location.key}
+              location={location}
+              component={NoMatch}
+            />
+          </Switch>
+        </div>
       </div>
     );
   }

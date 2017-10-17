@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Map, is } from "immutable";
 import pureRender from "../utils/immutable-pure-render-decorator";
 import { css, withStyles } from "../withStyles";
 import Comp from "../component/comp";

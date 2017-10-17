@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSendMessageActions } from "../actions/about";
-import { Map } from "immutable";
 import { css, withStyles } from "../withStyles";
 
 @connect(
   state => {
     return {
-      day: state.IndexReducers.getIn(["day"])
+      day: state.IndexReducers.day
     };
   },
   dispatch => {
