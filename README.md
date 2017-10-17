@@ -2,9 +2,9 @@
 
 ![](https://i.loli.net/2017/08/19/5997220b136c7.png)
 
-Yorha-Boilerplate 可能是比较简单友好的React单页面开发环境，[DEMO测试页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)。
+[DEMO测试页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)。
 
-如果有错误或者好的建议请联系我，正在使用该环境开发组件库。
+如果有错误或者好的建议请联系我。
 
 # Feature
 - 技术栈 ES6/7 Immutable React React-Redux5 React-Router4
