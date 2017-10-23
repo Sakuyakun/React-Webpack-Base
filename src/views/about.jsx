@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSendMessageActions } from "../actions/about";
-import { css, withStyles } from "../withStyles";
+import styles from '../assets/css/demoStyle.scss';
 
 @connect(
   state => {
@@ -17,20 +17,14 @@ import { css, withStyles } from "../withStyles";
     };
   }
 )
-@withStyles(({ color }) => ({
-  title: {
-    color: color.text
-  }
-}))
 export default class About extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { styles } = this.props;
     return (
       <div>
-        <span {...css(styles.title)}>
+        <span className={styles.aboutTitle}>
           配置文件有错误或者好的建议请联系我 <br />
           正使用该环境开发组件库 Yorha-Component <br />
           <br />

@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import pureRender from "../utils/immutable-pure-render-decorator";
-import { css, withStyles } from "../withStyles";
 import Comp from "../component/comp";
+import styles from '../assets/css/demoStyle.scss';
 
 @pureRender
-@withStyles(({ color }) => ({
-  compContent: {
-    color: color.text
-  }
-}))
 export default class ExamplePage extends Component {
   state = {
     info: [
@@ -21,11 +16,10 @@ export default class ExamplePage extends Component {
   };
   render() {
     const { info } = this.state;
-    const { styles } = this.props;
 
     return (
       <div>
-        <div {...css(styles.compContent)}>
+        <div className={styles.compContent}>
           {info.map((item, index) => <Comp key={index} content={item} />)}
         </div>
       </div>

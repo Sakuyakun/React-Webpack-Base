@@ -30,13 +30,11 @@
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-with-styles": "^2.1.0",
     "react-with-styles-interface-aphrodite": "^3.0.0",
     "redux": "^3.7.0",
     "spacetime": "^1.2.0"
   },
   "devDependencies": {
-    "aphrodite": "^1.2.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
@@ -65,7 +63,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.4.4",
-    "react-hot-loader": "next",
+    "react-hot-loader": "^3.1.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "svg-inline-loader": "^0.8.0",
