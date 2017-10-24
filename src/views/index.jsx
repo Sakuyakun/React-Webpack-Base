@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from '../assets/css/demoStyle.scss';
+import styles from "../assets/css/demoStyle.scss";
 
 export default class Index extends Component {
   constructor(props) {

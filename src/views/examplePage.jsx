@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import pureRender from "../utils/immutable-pure-render-decorator";
 import Comp from "../component/comp";
-import styles from '../assets/css/demoStyle.scss';
+import styles from "../assets/css/demoStyle.scss";
 
 @pureRender
 export default class ExamplePage extends Component {

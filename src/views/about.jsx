@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSendMessageActions } from "../actions/about";
-import styles from '../assets/css/demoStyle.scss';
+import styles from "../assets/css/demoStyle.scss";
 
 @connect(
   state => {
