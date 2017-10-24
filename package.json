@@ -12,13 +12,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.config.js --progress --colors",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.config.js --progress --colors",
-    "lint": "eslint ./src/**/*.jsx --color",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "src/**/*.jsx": [
-      "prettier --write"
-    ]
+    "lint": "eslint ./src/**/*.jsx --color"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
