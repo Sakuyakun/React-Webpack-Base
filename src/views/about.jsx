@@ -26,7 +26,6 @@ export default class About extends Component {
       <div>
         <span className={styles.aboutTitle}>
           配置文件有错误或者好的建议请联系我 <br />
-          正使用该环境开发组件库 Yorha-Component <br />
           <br />
           壁纸Hotaru by Rella（pixivID 64495434）<br />
           <br />

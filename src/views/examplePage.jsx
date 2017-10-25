@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import pureRender from "../utils/immutable-pure-render-decorator";
 import Comp from "../component/comp";
 import styles from "../assets/css/demoStyle.scss";
+import ErrorBoundary from "../component/ErrorBoundary";
 
 @pureRender
 export default class ExamplePage extends Component {
   state = {
     info: [
-      "component 1 content in yorha",
-      "component 2 content in yorha",
-      "component 3 content in yorha",
-      "component 4 content in yorha",
-      "component 5 content in yorha"
+      "react component in yorha",
+      "react component in yorha",
+      "react component in yorha"
     ]
   };
   render() {
@@ -20,7 +19,13 @@ export default class ExamplePage extends Component {
     return (
       <div>
         <div className={styles.compContent}>
-          {info.map((item, index) => <Comp key={index} content={item} />)}
+          {
+            info.map((item, index) => 
+              <ErrorBoundary key={index}>
+                <Comp content={item} />
+              </ErrorBoundary>
+            )
+          }
         </div>
       </div>
     );

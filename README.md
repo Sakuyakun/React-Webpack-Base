@@ -7,7 +7,7 @@
 如果有错误或者好的建议请联系我。
 
 # Feature
-- ES6/7 Immutable React React-Redux5 React-Router4
+- ES6/7/8 Immutable React React-Redux5 React-Router4
 - SASS & PostCSS
 - 使用 Webpack3 进行处理打包
 - 使用 Hot Module Replacement 热加载
@@ -19,17 +19,20 @@
 ├── dist                           # 打包输出目录
 ├── src
 │   ├── component                  # 组件目录
+│   ├── locales                    # 国际化语言json
 │   ├── actions                    # Redux Actions 文件目录
 │   ├── reducers                   # Redux reducers 文件目录
 │   ├── assets                     # 资源目录
 │   ├── template                   # HTML模板
 │   ├── utils                      # Utility and helper classes
 │   ├── views                      # 路由主页面
+│   ├── app.jsx                    # 组件初始化处理
 │   ├── entry.jsx                  # 入口文件
+│   ├── intl.js                    # intl接口
 │   ├── routers.jsx                # React Router 路由文件
 │   ├── normalize.scss             # normalize
-├── index.html                     # devServer 主页
-├── package-lock.json              # package 锁文件
+├── index.html                     # devServer index
+├── package-lock.json              # package lock
 ├── package.json                   # package
 ├── postcss.config.js              # postCSS 配置文件
 ├── webpack.config.js              # Webpack 基本配置

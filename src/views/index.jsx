@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "../assets/css/demoStyle.scss";
+import intlGet from "../intl";
 
 export default class Index extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class Index extends Component {
   render() {
     return (
       <div className={styles.title}>
-        <span className={styles.index}>Yorha Boilerplate</span>
+        <span className={styles.index}>{intlGet.getViewIndexTitle()}</span>
       </div>
     );
   }

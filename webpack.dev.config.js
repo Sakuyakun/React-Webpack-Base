@@ -1,14 +1,16 @@
 const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const publicPath = "http://localhost:3004/";
 const {baseConfig} = require("./webpack.config.js");
+
+const PUBLIC_PATH = "http://localhost:3004/";
+const PORT = 3004
 
 const devConfig = {
   devtool: "inline-source-map",
   entry: [
     "react-hot-loader/patch",
-    "webpack-dev-server/client?" + publicPath,
+    "webpack-dev-server/client?" + PUBLIC_PATH,
     "webpack/hot/only-dev-server",
     "./src/entry"
   ],
@@ -23,7 +25,7 @@ const devConfig = {
   ],
   devServer: {
     host: "localhost",
-    port: 3004,
+    port: PORT,
     historyApiFallback: true,
     hot: true,
     overlay: {
