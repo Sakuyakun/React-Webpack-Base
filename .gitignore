@@ -1,6 +1,7 @@
 cache
 .sass-cache
 *.git
+dist
 
 # Logs
 logs

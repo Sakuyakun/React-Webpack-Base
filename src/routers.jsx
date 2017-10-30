@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import styles from "./assets/css/demoStyle.scss";
+import AsyncComponent from "./utils/AsyncComponent";
 
 // Router
-import Navigation from "./views/navigation";
-import Index from "./views/index";
-import About from "./views/about";
-import ExamplePage from "./views/examplePage";
-import NoMatch from "./views/404";
+// import Navigation from "./views/navigation";
+// import Index from "./views/index";
+// import About from "./views/about";
+// import ExamplePage from "./views/examplePage";
+// import NoMatch from "./views/404";
+
+const Navigation = AsyncComponent(() => import("./views/navigation.jsx"))
+const Index = AsyncComponent(() => import("./views/index.jsx"))
+const About = AsyncComponent(() => import("./views/about.jsx"))
+const ExamplePage = AsyncComponent(() => import("./views/examplePage.jsx"))
+const NoMatch = AsyncComponent(() => import("./views/404.jsx"))
 
 @withRouter
 export default class Routers extends Component {
