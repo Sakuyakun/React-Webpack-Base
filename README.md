@@ -1,10 +1,12 @@
-# Introduction
+# Yorha Boilerplate
 
-![](https://i.loli.net/2017/08/19/5997220b136c7.png)
 
-[DEMO测试页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)。
+[![apm](https://img.shields.io/badge/MIT-license-blue.svg?style=flat-square)]()
 
-如果有错误或者好的建议请联系我。
+
+![](https://i.loli.net/2017/08/19/5997220b136c7.png) 
+
+[DEMO页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)
 
 # Feature
 - ES6/7/8 Immutable React React-Redux5 React-Router4
