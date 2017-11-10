@@ -1,9 +1,5 @@
 # Yorha Boilerplate
 
-
-[![apm](https://img.shields.io/badge/MIT-license-blue.svg?style=flat-square)]()
-
-
 ![](https://i.loli.net/2017/08/19/5997220b136c7.png) 
 
 [DEMO页面预览](https://sakuyakun.github.io/Yorha-Boilerplate/)
