@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const {baseConfig} = require("./webpack.config.js");
+const merge = require('webpack-merge');
 
 const PUBLIC_PATH = "http://localhost:3004/";
 const PORT = 3004
@@ -35,4 +36,4 @@ const devConfig = {
   }
 };
 
-module.exports = Object.assign(baseConfig, devConfig);
+module.exports = merge(baseConfig, devConfig);

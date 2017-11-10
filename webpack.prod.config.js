@@ -7,6 +7,7 @@ const { baseConfig, extractPlugin } = require("./webpack.config.js");
 const Clean = require("clean-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackMonitor = require('webpack-monitor');
+const merge = require('webpack-merge');
 
 const prodConfig = {
   entry: {
@@ -82,4 +83,4 @@ const prodConfig = {
   ]
 };
 
-module.exports = Object.assign(baseConfig, prodConfig);
+module.exports = merge(baseConfig, prodConfig);
