@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import styles from "../assets/css/demoStyle.scss";
-import intlGet from "../intl";
+import styles from "@/assets/css/demoStyle.scss";
+import intlGet from "@/intl";
 
 export default class Index extends Component {
   constructor(props) {

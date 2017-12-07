@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import styles from "../assets/css/demoStyle.scss";
+import styles from "@/assets/css/demoStyle.scss";
 
 // 顶部导航
 @withRouter

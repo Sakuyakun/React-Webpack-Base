@@ -102,6 +102,9 @@ env === "development" ? (cssrule = dev_cssRule) : (cssrule = prod_cssRule)
 
 const baseConfig = {
   resolve: { 
+    alias: {
+      '@': path.join(__dirname, './src')
+    },
     extensions: [".jsx", ".js", ".json", ".scss", ".css"]
   },
   module: {
