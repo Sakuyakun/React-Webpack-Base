@@ -1,5 +1,5 @@
 export const ActionTypes = {
-  SET_DAY: "SET_DAY"
+  SET_DAY: 'SET_DAY'
 };
 
 export const setSendMessageActions = data => {

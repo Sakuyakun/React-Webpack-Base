@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-const AsyncComponent = loadComponent => (
+const AsyncComponent = loadComponent =>
   class AsyncComponent extends Component {
     state = {
-      Component: null,
-    }
+      Component: null
+    };
 
     componentWillMount() {
       if (this.hasLoadedComponent()) {
@@ -13,10 +13,10 @@ const AsyncComponent = loadComponent => (
 
       loadComponent()
         .then(module => module.default)
-        .then((Component) => {
-          this.setState({Component});
+        .then(Component => {
+          this.setState({ Component });
         })
-        .catch((err) => {
+        .catch(err => {
           console.error(`Cannot load component in <AsyncComponent />`);
           throw err;
         });
@@ -27,10 +27,9 @@ const AsyncComponent = loadComponent => (
     }
 
     render() {
-      const {Component} = this.state;
-      return (Component) ? <Component {...this.props} /> : null;
+      const { Component } = this.state;
+      return Component ? <Component {...this.props} /> : null;
     }
-  }
-);
+  };
 
 export default AsyncComponent;

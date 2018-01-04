@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class ErrorBoundary extends Component {
-  state = { 
-    hasError: false 
-  }
+  state = {
+    hasError: false
+  };
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });

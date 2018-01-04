@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import pureRender from "../utils/immutable-pure-render-decorator";
+import React, { Component } from 'react';
+import pureRender from '../utils/immutable-pure-render-decorator';
 
 @pureRender
 export default class ShowName extends Component {
@@ -8,10 +8,6 @@ export default class ShowName extends Component {
   }
   render() {
     let { content } = this.props;
-    return (
-      <div>
-        {content}
-      </div>
-    );
+    return <div>{content}</div>;
   }
 }

@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import styles from "@/assets/css/demoStyle.scss";
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import styles from '@/assets/css/demoStyle.scss';
 
 // 顶部导航
 @withRouter
 export default class Navigation extends Component {
   render() {
-    const icon_github = "fa fa-github fa-3x ";
+    const icon_github = 'fa fa-github fa-3x ';
     const { location } = this.props;
 
     return (
       <div>
         <Link
           className={
-            styles.link + " " + (location.pathname === "/" && styles.link_hover)
+            styles.link + ' ' + (location.pathname === '/' && styles.link_hover)
           }
           to="/"
         >
@@ -22,8 +22,8 @@ export default class Navigation extends Component {
         <Link
           className={
             styles.link +
-            " " +
-            (location.pathname === "/examplepage" && styles.link_hover)
+            ' ' +
+            (location.pathname === '/examplepage' && styles.link_hover)
           }
           to="/examplepage"
         >
@@ -32,8 +32,8 @@ export default class Navigation extends Component {
         <Link
           className={
             styles.link +
-            " " +
-            (location.pathname === "/about" && styles.link_hover)
+            ' ' +
+            (location.pathname === '/about' && styles.link_hover)
           }
           to="/about"
         >
@@ -43,7 +43,7 @@ export default class Navigation extends Component {
           href="https://github.com/Sakuyakun/Yorha-Boilerplate"
           target="_blank"
         >
-          <i className={icon_github + " " + styles.icon} />
+          <i className={icon_github + ' ' + styles.icon} />
         </a>
       </div>
     );

@@ -1,8 +1,8 @@
-import { ActionTypes } from "../actions/about";
-import clone from "clone";
+import { ActionTypes } from '../actions/about';
+import clone from 'clone';
 
 const initialState = {
-  day: "2017/01/01"
+  day: '2017/01/01'
 };
 
 const actionType = {
